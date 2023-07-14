@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Electronic Store</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <main>
+            <div class="container text-center">
+                <h1 class="bg-light py-4 text-success">
+                    <i class="fas fa-plug px-3"></i>Tech Store Online</i>
+                </h1>
+                <div class="d-flex justify-content-center">
+                    <div class="w-50">
+                        <input type="text" id="userid" class="form-control" autocomplete="off" readonly
+                            placeholder="ID" />
+                        <input type="text" id="title" class="form-control" autocomplete="off" placeholder="Title" />
+                        <div class="prices">
+                            <input onkeyup="getTotal()" type="number" id="price" class="form-control" autocomplete="off"
+                                placeholder="Price" />
+                            <input onkeyup="getTotal()" type="number" id="taxes" class="form-control" autocomplete="off"
+                                placeholder="Taxes" />
+                            <input onkeyup="getTotal()" type="number" id="ads" class="form-control" autocomplete="off"
+                                placeholder="Ads" />
+                            <input onkeyup="getTotal()" type="number" id="discount" class="form-control"
+                                autocomplete="off" placeholder="Discount" />
+                            <small id="total">RESULT</small>
+                        </div>
+
+                        <input type="number" id="count" class="form-control" autocomplete="off" placeholder="Count" />
+                        <input type="text" id="category" class="form-control" autocomplete="off"
+                            placeholder="Category" />
+
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-sm-6">
+                                <button class="btn btn-success btn-lg btn-block" id="submit">Create</button>
+                            </div>
+                            <div class="col-sm-6 mt-2 mt-sm-0">
+                                <button onclick="getSearchMood()" type="button"
+                                    class="btn btn-outline-primary btn-block">Search by Title</button>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <button onclick="getSearchMood()" type="button"
+                                    class="btn btn-outline-secondary btn-block">Search by Category</button>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <button type="button" class="btn btn-outline-info btn-block">Search</button>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div id="deleteAll" class="btn btn-danger btn-block"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Table -->
+                <div class="d-flex table-data">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Taxes</th>
+                                <th scope="col">Ads</th>
+                                <th scope="col">Discount</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Custom main file -->
+        <script src="../js/main.js"></script>
+    </body>
+
+</html>
